@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>С 23 Февраля!</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <header>
+        <h1 id="headerTitle" onclick="toggleHeaderColor()">С 23 Февраля!</h1>
+        <p id="currentDate"></p>
+    </header>
+
+    <div class="content-box">
+        <div class="interactive-tank" id="tankObject">
+            <div class="ground"></div>
+            <div class="hull" id="tankHull" onmouseover="m_overHull()" onmouseout="m_outHull()"></div>
+            <div class="turret" id="turretPart"></div>
+            <div class="gun"></div>
+        </div>
+        <p class="hint">Наведи курсор на корпус танка</p>
+        <p class="hint" onclick="changeTankColor()">Нажми здесь, чтобы изменить цвет башни</p>
+    </div>
+
+    <div class="greeting-form-container">
+        <h2>Персональное поздравление</h2>
+        <form name="greetingForm" onsubmit="return validateForm(event)">
+            <label for="userName">Введите имя:</label>
+            <input type="text" id="userName" name="userName" placeholder="Например: ArmfeterLex">
+            
+            <label for="troopsSelect">Род войск:</label>
+            <select id="troopsSelect">
+                <option value="танкист">Танкист</option>
+                <option value="летчик">Летчик</option>
+                <option value="моряк">Моряк</option>
+                <option value="десантник">Десантник</option>
+                <option value="пехотинец">Пехотинец</option>
+                <option value="пограничник">Пограничник</option>
+                <option value="ракетчик">Ракетчик</option>
+            </select>
+            
+            <button type="submit">Получить открытку</button>
+        </form>
+    </div>
+
+    <div class="photo-viewer">
+        <h3>Фотогалерея</h3>
+        <div class="photo-buttons">
+            <button onclick="showPhoto(0)">Фото 1</button>
+            <button onclick="showPhoto(1)">Фото 2</button>
+            <button onclick="showPhoto(2)">Фото 3</button>
+            <button onclick="showPhoto(3)">Фото 4</button>
+        </div>
+        <div class="photo-container" id="photoContainer" onmouseover="zoomPhoto()" onmouseout="normalPhoto()">
+            <img id="displayedPhoto" src="img/image1.jpg" alt="Фото">
+        </div>
+    </div>
+
+    <div class="slider-controls">
+        <h3>Поздравительный слайдер</h3>
+        <button onclick="startSlideshow()">Запустить слайды</button>
+        <button onclick="stopSlideshow()">Стоп</button>
+        <div class="mini-slider" ondblclick="nextSlideManually()">
+            <img id="sliderPreview" src="img/image1.jpg" alt="слайд">
+        </div>
+        <p class="hint">Двойной клик по картинке - следующий слайд</p>
+    </div>
+
+    <div id="resultCard" class="result-card hidden">
+        <h3 id="greetingText"></h3>
+        <p id="troopsGreeting"></p>
+        <div class="long-greeting">
+            <p>От всей души поздравляем Вас с Днем защитника Отечества!</p>
+            <p>Желаем Вам крепкого здоровья, несгибаемой воли, мужества и отваги. Пусть каждый день будет наполнен гордостью за свою страну, теплом и заботой близких. Мирного неба над головой, уверенности в завтрашнем дне и успехов во всех начинаниях!</p>
+            <p>С праздником, с 23 февраля!</p>
+        </div>
+        
+        <div class="image-box" id="resultImage" onclick="changeResultColor()">
+            <span id="starSymbol">★</span>
+        </div>
+        
+        <button onclick="closeGreeting()">Закрыть</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
