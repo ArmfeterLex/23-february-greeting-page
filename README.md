@@ -2,6 +2,8 @@
 
 Интерактивная веб-страница для поздравления с 23 февраля на чистом HTML, CSS и JavaScript.
 
+<img width="1829" height="1036" alt="23 February Greeting Page" src="https://github.com/user-attachments/assets/e6454630-67a8-4d8d-aaf5-4fd4338951fc" />
+
 ## Функциональность
 
 ### 🎨 Интерактивные элементы
